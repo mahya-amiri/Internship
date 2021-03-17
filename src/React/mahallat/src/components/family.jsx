@@ -1,43 +1,22 @@
 import React, { Component } from "react";
 
 class Family extends Component {
-  state = {
-    open: false,
-  };
-  handleDropdown = () => {
-    this.setState((state) => {
-      return {
-        open: !state.open,
-      };
-    });
-  };
   render() {
     return (
-      //   <React.Fragment>
-      //   <div className="App">
-      <div className="container">
-        <button
-          onClick={() => this.handleDropdown}
-          className="btn btn-primary btn-sm"
-        >
-          ☰
-        </button>
-        {this.state.open && (
-          <div className="dropdown">
-            <ul>
-              <li>علی امیری</li>
-              <li>معصومه بنی اسد</li>
-              <li>مهسا امیری</li>
-              <li>احمد بنی اسد</li>
-              <li>لیلا شاهرخی</li>
-              <li>ثمین بنی اسد</li>
-            </ul>
-          </div>
-        )}
-      </div>
-      //   </div>
-
-      //   </React.Fragment>
+      <form onSubmit={this.state.handleSubmit} className="float-right">
+        <label>
+          :شخص مورد نظر را انتخاب کنید
+          <select value={this.state.value} onChange={this.handleDropdown}>
+            <option value="Ali">علی امیری</option>
+            <option value="Masume">معصومه بنی اسد</option>
+            <option value="Mahsa">مهسا امیری</option>
+            <option value="Ahmad">احمد بنی اسد</option>
+            <option value="Leyla">لیلا شاهرخی</option>
+            <option value="Smain">ثمین بنی اسد</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     );
   }
 }
