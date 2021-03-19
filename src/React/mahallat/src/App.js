@@ -16,8 +16,8 @@ function App() {
         <Family></Family>
         <img src="family.jpg" className="img-fluid"></img>
       </main>
-      <footer className="fixed-bottom bg-secondary text-right">
-        <div className="container">
+      <footer className="fixed-bottom bg-secondary">
+        <div className="containere text-right mr-3">
           <div className="row">
             <div className="col">
               <span className="text-white">

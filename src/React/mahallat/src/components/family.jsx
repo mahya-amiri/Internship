@@ -32,7 +32,7 @@ class Family extends Component {
             برای شما نمایش داده شود
           </label>
           <select
-            className="form-control input-group-prepend"
+            className="form-control text-right"
             onChange={(e) => this.showInfo(e.target.value)}
           >
             <option value="" hidden>
