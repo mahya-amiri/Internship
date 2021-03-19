@@ -25,17 +25,19 @@ class Family extends Component {
 
   render() {
     return (
-      <form>
+      <form className="text-right">
         <div className="form-group">
           <label for="exampleFormControlInput1">
-            شخص مورد نظر را انتخاب کنید
+            .یکی از اسامی زیر را انتخاب کنید تا نسبت، شهر محل سکونت و سن فرد
+            برای شما نمایش داده شود
           </label>
           <select
-            className="form-control"
-            id="exampleFormControlSelect1"
+            className="form-control input-group-prepend"
             onChange={(e) => this.showInfo(e.target.value)}
           >
-            <option>انتخاب کنید</option>
+            <option value="" hidden>
+              :شخص مورد نظر را انتخاب کنید
+            </option>
 
             {this.state.familyData.map((data) => (
               <option key={data.id} value={data.id}>
