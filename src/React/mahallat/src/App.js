@@ -13,12 +13,15 @@ function App() {
         </nav>
         <hr></hr>
         <Family></Family>
+        <img src="family.jpg" className="img-fluid"></img>
       </main>
       <footer className="fixed-bottom bg-secondary text-right">
-        <div className="container p-2">
+        <div className="container">
           <div className="row">
             <div className="col">
-              <span className="text-white">توسعه داده توسط شرکت فیوسافت ©</span>
+              <span className="text-white">
+                توسعه داده شده توسط شرکت فیوسافت ©
+              </span>
             </div>
           </div>
         </div>
