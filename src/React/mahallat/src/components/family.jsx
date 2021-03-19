@@ -1,6 +1,28 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Family extends Component {
+  state = {
+    familyData: [],
+    selectedFamily: null,
+  };
+
+  componentDidMount() {
+    axios.get("../family.json").then(
+      (result) => {
+        this.setState({ familyData: result.data });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  showInfo = (id) => {
+    const family = this.state.familyData.filter((x) => x.id === +id)[0];
+    this.setState({ selectedFamily: family });
+  };
+
   render() {
     return (
       <form>
@@ -11,16 +33,22 @@ class Family extends Component {
           <select
             className="form-control"
             id="exampleFormControlSelect1"
-            onChange={this.props.handleDropdown}
+            onChange={(e) => this.showInfo(e.target.value)}
           >
-            <option value="Father">علی امیری</option>
-            <option value="Mother">معصومه بنی اسد</option>
-            <option value="Sister">مهسا امیری</option>
-            <option value="Ahmad">احمد بنی اسد</option>
-            <option value="Leyla">لیلا شاهرخی</option>
-            <option value="Smain">ثمین بنی اسد</option>
+            <option>انتخاب کنید</option>
+
+            {this.state.familyData.map((data) => (
+              <option key={data.id} value={data.id}>
+                {data.name}
+              </option>
+            ))}
           </select>
         </div>
+        {this.state.selectedFamily && (
+          <div>
+            <p>{this.state.selectedFamily.rel}</p>
+          </div>
+        )}
       </form>
     );
   }
