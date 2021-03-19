@@ -19,7 +19,7 @@ class Family extends Component {
   }
 
   showInfo = (id) => {
-    const family = this.state.familyData.filter((x) => x.id === +id)[0];
+    const family = this.state.familyData.filter((d) => d.id == id)[0];
     this.setState({ selectedFamily: family });
   };
 
@@ -45,8 +45,10 @@ class Family extends Component {
           </select>
         </div>
         {this.state.selectedFamily && (
-          <div>
-            <p>{this.state.selectedFamily.rel}</p>
+          <div className="col">
+            <p>نسبت: {this.state.selectedFamily.rel}</p>
+            <p>شهر: {this.state.selectedFamily.city}</p>
+            <p>سن: {this.state.selectedFamily.age}</p>
           </div>
         )}
       </form>
