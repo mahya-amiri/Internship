@@ -47,11 +47,22 @@ class Family extends Component {
           </select>
         </div>
         {this.state.selectedFamily && (
-          <div className="col">
-            <p>نسبت: {this.state.selectedFamily.rel}</p>
-            <p>شهر: {this.state.selectedFamily.city}</p>
-            <p>سن: {this.state.selectedFamily.age}</p>
-          </div>
+          <table className="table">
+            <thead>
+              <tr className="row">
+                <th className="col">نسبت</th>
+                <th className="col">شهر محل سکونت</th>
+                <th className="col">سن</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="row">
+                <td className="col">{this.state.selectedFamily.rel}</td>
+                <td className="col">{this.state.selectedFamily.city}</td>
+                <td className="col">{this.state.selectedFamily.age}</td>
+              </tr>
+            </tbody>
+          </table>
         )}
       </form>
     );

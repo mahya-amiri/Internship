@@ -12,6 +12,7 @@ function App() {
           </div>
         </nav>
         <hr></hr>
+        <br></br>
         <Family></Family>
         <img src="family.jpg" className="img-fluid"></img>
       </main>
