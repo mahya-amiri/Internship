@@ -47,7 +47,7 @@ class Movies extends Component {
     this.setState({ sortColumn });
   };
 
-  getPageDate = () => {
+  getPageData = () => {
     const {
       pageSize,
       currentPage,
@@ -73,7 +73,7 @@ class Movies extends Component {
 
     if (count === 0) return <p>There are no movies in the database</p>;
 
-    const { totalCount, data: movies } = this.getPageDate();
+    const { totalCount, data: movies } = this.getPageData();
     return (
       <div className="row">
         <div className="col-3">
